@@ -1,0 +1,171 @@
+.transition-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 5;
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container {
+  /* Spiral into screen at end of transition*/
+  animation: spiralIn 2s ease-in-out forwards;
+  animation-delay: 6s;
+  transform-origin: center;
+}
+
+.sliding-word {
+  /* Slide in ominous words at start of transition*/
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  animation: slideInOut 6s forwards;
+  text-align: center;
+  opacity: 0%;
+}
+
+.closing-container {
+  /* Closing animation from end of previous page */
+  animation: closeDoor 2s forwards;
+  transform-origin: left;
+}
+
+.opening-container {
+  /* opening animation from end of previous page */
+  animation: openDoor 2s forwards;
+  transform-origin: right;
+}
+
+@keyframes slideInOut {
+  0% {
+    transform: translateX(-100%);
+    opacity: 100%;
+  }
+  20%,
+  80% {
+    transform: translateX(0%);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 100%;
+  }
+}
+
+@keyframes spiralIn {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(0) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes closeDoor {
+    from {
+        transform: rotateY(-90deg);
+        left: 0;
+    }
+    to {
+        transform: rotateY(0deg);
+        right: 0;
+    }
+}
+
+
+
+.animate-left {
+    animation: animate-left 1s forwards;
+}
+
+@keyframes animate-left {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px) rotate(5deg);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px)rotate(-5deg);
+    } 
+
+    from {
+        width: 100%;
+        background-color: white;
+    }
+    to {
+        width: 48%;
+        background-color: lightgray;
+    }
+}
+
+.animate-right {
+    animation: animate-right 1s forwards;
+    position: absolute;
+    transform-origin: center;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes animate-right {
+    from {
+        width: 0%;
+        left: 24%;
+        height: 0;
+    }
+    to {
+        width: 48%;
+        height: 100%;
+        left: calc(100% - 48%); 
+        opacity: 1;
+    }
+}
+
+.span-anim1 {
+    animation: text-slide1 2s forwards;
+    position: absolute;
+}
+
+@keyframes text-slide1 {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+    to {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.span-anim2 {
+    animation: text-slide2 2s forwards;
+    position: absolute;
+}
+
+@keyframes text-slide2 {
+    from {
+        right:100%;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes openDoor {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(90deg);
+  }
+}
