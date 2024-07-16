@@ -51,3 +51,6 @@ One thing we learned was how finnicky AI can be, but in a good way. While AI is 
 We also learned a lot about Socket.io, completely from scratch! We learned about sockets briefly before in classes, but being able to really apply it in a practical setting gave us a much better understanding and appreciation for its capabilities. 
 
 
+![trai2](https://github.com/user-attachments/assets/da18675a-b46f-4279-8e2b-96c892924f75)
+
+
