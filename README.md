@@ -1,4 +1,5 @@
 
+![traitor](https://github.com/user-attachments/assets/335e0678-f778-45e3-ae3f-007246303c43)
 
 ## Inspiration
 
